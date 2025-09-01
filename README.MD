@@ -48,14 +48,14 @@ Terraform → Azure VM (SonarQube in Docker)
 
 2. SonarQube Setup (on Azure VM)
 
-SSH into the VM, install Docker, Java, Maven, and Azure CLI.
+    SSH into the VM, install Docker, Java, Maven, and Azure CLI.
 
-Run SonarQube in Docker:
+    Run SonarQube in Docker:
 ```
     docker run -d --name sonarqube -p 9000:9000 sonarqube:lts-community
 ```
 
-Access http://<vm-public-ip>:9000, change the default password, and create a project key and token.
+    Access http://<vm-public-ip>:9000, change the default password, and create a project key and token.
 
 3. Build & Analyze Petclinic
 ```
@@ -64,9 +64,9 @@ Access http://<vm-public-ip>:9000, change the default password, and create a pro
     mvn -DskipTests=true clean package
 ```
 
-# Run Sonar analysis (twice to populate trends)
+## Run Sonar analysis (twice to populate trends)
 ```
-mvn -DskipTests=true clean verify sonar:sonar \
+ mvn -DskipTests=true clean verify sonar:sonar \
   -Dsonar.host.url=http://<vm-public-ip>:9000 \
   -Dsonar.projectKey=<project-key> \
   -Dsonar.token=<your-token>
