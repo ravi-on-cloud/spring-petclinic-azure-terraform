@@ -35,47 +35,53 @@ Terraform → Azure VM (SonarQube in Docker)
 ## ⚙️ How to Reproduce
 
 1. Clone & Configure
-git clone https://github.com/ravi-on-cloud/spring-petclinic-azure-terraform.git
-cd spring-petclinic-azure-terraform
+```plaintext
+    git clone https://github.com/ravi-on-cloud/spring-petclinic-azure-terraform.git
+    cd spring-petclinic-azure-terraform
 
     # Initialize terraform
     terraform init
 
     # Apply resources
     terraform apply
+```
 
 2. SonarQube Setup (on Azure VM)
 
 SSH into the VM, install Docker, Java, Maven, and Azure CLI.
 
 Run SonarQube in Docker:
-
+```
     docker run -d --name sonarqube -p 9000:9000 sonarqube:lts-community
+```
 
 Access http://<vm-public-ip>:9000, change the default password, and create a project key and token.
 
 3. Build & Analyze Petclinic
-
+```
     git clone https://github.com/spring-projects/spring-petclinic
     cd spring-petclinic
     mvn -DskipTests=true clean package
+```
 
 # Run Sonar analysis (twice to populate trends)
-
+```
 mvn -DskipTests=true clean verify sonar:sonar \
   -Dsonar.host.url=http://<vm-public-ip>:9000 \
   -Dsonar.projectKey=<project-key> \
   -Dsonar.token=<your-token>
+```
 
 4. Deploy to Azure App Service
 
     From your local machine:
-
+```
     az webapp deploy \
     --resource-group proj6-app-rg \
     --name proj6-petclinic-app \
     --src-path app.jar \
     --type jar
+```
 
 🔒 Notes
 
