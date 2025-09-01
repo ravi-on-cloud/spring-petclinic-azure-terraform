@@ -35,7 +35,7 @@ Terraform → Azure VM (SonarQube in Docker)
 
 ![Architecture Diagram](Diagram.png)
 
-## ⚙️ How to Reproduce
+## How to Reproduce
 
 1. Clone & Configure
 ```plaintext
