@@ -65,6 +65,7 @@ Terraform → Azure VM (SonarQube in Docker)
 ```
 
 ## Run Sonar analysis (twice to populate trends)
+Run this code
 ```
  mvn -DskipTests=true clean verify sonar:sonar \
   -Dsonar.host.url=http://<vm-public-ip>:9000 \
