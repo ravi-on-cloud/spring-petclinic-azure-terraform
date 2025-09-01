@@ -4,7 +4,7 @@ This project demonstrates deploying the [Spring Petclinic](https://github.com/sp
 
 ---
 
-## 🚀 Project Highlights
+## Project Highlights
 - **Infrastructure as Code**: Provisioned Azure resources (VM, App Service, networking) using Terraform.
 - **SonarQube Analysis**: Set up SonarQube in Docker on an Azure VM, generated project key & token, and ran static code analysis with Maven.
 - **Java Deployment**: Built the Petclinic JAR and deployed it to Azure App Service (Java 17).
@@ -12,7 +12,7 @@ This project demonstrates deploying the [Spring Petclinic](https://github.com/sp
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Terraform** — AzureRM provider
 - **Azure App Service (Linux, Java 17)**
 - **Azure Virtual Machine (Ubuntu)**
@@ -23,7 +23,7 @@ This project demonstrates deploying the [Spring Petclinic](https://github.com/sp
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 ```plaintext
 Terraform → Azure VM (SonarQube in Docker)
           → Azure App Service (Java 17, hosts Petclinic)
@@ -31,6 +31,9 @@ Terraform → Azure VM (SonarQube in Docker)
 
 ```
 ----
+## Architecture Diagram
+
+![Architecture Diagram](Diagram.png)
 
 ## ⚙️ How to Reproduce
 
@@ -84,7 +87,7 @@ Run this code
     --type jar
 ```
 
-🔒 Notes
+## Notes
 
 Restricted inbound SSH to my IP once setup was complete.
 
@@ -92,7 +95,8 @@ Secrets (terraform.tfvars, Sonar tokens) are excluded from version control via .
 
 Using Terraform outputs to fetch app name & URL for convenience.
 
-📌 GitHub Topics
+
+GitHub Topics
 
 terraform · azure · java · spring-boot · sonarqube · devops · cloud · IAC
 
