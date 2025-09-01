@@ -29,7 +29,11 @@ Terraform → Azure VM (SonarQube in Docker)
           → Azure App Service (Java 17, hosts Petclinic)
           → Azure Networking (VNet, Subnet, NSG)
 
-⚙️ How to Reproduce
+```
+----
+
+## ⚙️ How to Reproduce
+
 1. Clone & Configure
 git clone https://github.com/ravi-on-cloud/spring-petclinic-azure-terraform.git
 cd spring-petclinic-azure-terraform
@@ -65,7 +69,7 @@ mvn -DskipTests=true clean verify sonar:sonar \
 
 4. Deploy to Azure App Service
 
-From your local machine:
+    From your local machine:
 
     az webapp deploy \
     --resource-group proj6-app-rg \
