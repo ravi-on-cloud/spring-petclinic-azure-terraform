@@ -93,5 +93,5 @@ Using Terraform outputs to fetch app name & URL for convenience.
 
 📌 GitHub Topics
 
-terraform · azure · java · spring-boot · sonarqube · devops · cloud · iac
+terraform · azure · java · spring-boot · sonarqube · devops · cloud · IAC
 
